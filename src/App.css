@@ -1,0 +1,32 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+.input,
+.select {
+  width: 20rem;
+  margin-bottom: 1rem;
+}
+.btn {
+  width: 100%;
+  margin-top: 1rem;
+  background-color: rgb(55, 55, 82);
+  color: aliceblue;
+}
+.add {
+  background-color: rgb(66, 64, 68);
+  margin-bottom: 1rem;
+}
+
+.edit {
+  background-color: rgb(172, 57, 93);
+}
+.infoadd {
+  background-color: rgb(7, 95, 66);
+}
