@@ -16,8 +16,8 @@ function App() {
     maxLength: 8,
     minLength: 3,
   });
-  const handleChange = (e) => {
-    setInputInfo({ ...inputInfo, value: e.target.value });
+  const handleChange = (val, index) => {
+    setInputInfo({ ...inputInfo, value: val });
   };
 
   const customStyles = {
@@ -58,7 +58,7 @@ function App() {
     });
     setIndexx(null);
   };
-
+  console.log(inputs);
   return (
     <>
       <h2>Custom Input</h2>
@@ -77,7 +77,7 @@ function App() {
           >
             <option value="text">Text</option>
             <option value="number">Number</option>
-            <option value="pasword">Password</option>
+            <option value="password">Password</option>
           </select>
 
           <label htmlFor="required">Input Required</label>
@@ -125,7 +125,10 @@ function App() {
             name="maxLength"
             value={inputInfo.maxLength}
             onChange={(e) =>
-              setInputInfo({ ...inputInfo, maxLength: e.target.value })
+              setInputInfo({
+                ...inputInfo,
+                maxLength: parseInt(e.target.value),
+              })
             }
           />
 
@@ -137,7 +140,10 @@ function App() {
             name="minLength"
             value={inputInfo.minLength}
             onChange={(e) =>
-              setInputInfo({ ...inputInfo, minLength: e.target.value })
+              setInputInfo({
+                ...inputInfo,
+                minLength: parseInt(e.target.value),
+              })
             }
           />
 
@@ -169,11 +175,11 @@ function App() {
       </button>
 
       {inputs?.map((item, index) => (
-        <div key={index}>
+        <div key={index} className="inputItem">
           <InputComponent
             type={item.type}
             value={item.value}
-            handleChange={(e) => handleChange(e)}
+            handleChange={(val) => handleChange(val, index)}
             holder={item.placeholder}
             inputStyle={customStyles}
             labelStyle={labelStyle}

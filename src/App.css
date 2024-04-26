@@ -30,3 +30,7 @@
 .infoadd {
   background-color: rgb(7, 95, 66);
 }
+.inputItem {
+  border: 0.1px solid gray;
+  padding: 2rem;
+}
